@@ -24,8 +24,10 @@ from `afm` to `feat` files. I use this script to combine the features, being
 true to the original kerning where possible.
 
 Then, using `conv_afm_feat.py`, `t1utils` from `brew`, `makeotf` and `otf2ttf` from Adobe's `afdko`,
-and `woff2_compress` from `brew`'s `woff2`, we can build all ours files. We need the `t1utils` to
-convert the font files into an ASCII format because Adobe's tools struggle with the binary format
-for one of the fonts.
+we can build all ours files. We need the `t1utils` to convert the font files into an ASCII format
+because Adobe's tools struggle with the binary format for one of the fonts.
+
+After that I generate the webfonts from the .ttf files using fontsquirrel,
+leaving everything untouched except letting it fix vertical metrics.
 
 
