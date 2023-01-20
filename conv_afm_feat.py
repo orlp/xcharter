@@ -39,12 +39,13 @@ max_agrave = int(max(bboxes[style]["Agrave"][3] for style, _ in metric_files))
 descender = int(max(abs(bboxes[style][c][1]) for c in string.ascii_lowercase for style, _ in metric_files))
 caps_height = int(max(bboxes[style][c][3] for c in "HZ" for style, _ in metric_files))
 
-# typo_ascender = int(max(max_agrave, (1.2 * upm - caps_height) / 2 + caps_height))
-# typo_descender = -int(max(descender, (1.2 * upm - caps_height) / 2))
-typo_ascender = max_agrave
-typo_descender = -descender
+typo_ascender = int(max(max_agrave, (1.2 * upm - caps_height) / 2 + caps_height))
+typo_descender = -int(max(descender, (1.2 * upm - caps_height) / 2))
+# typo_ascender = max_agrave
+# typo_descender = -descender
 win_ascent = max(bbox[3] for style, _ in metric_files for bbox in bboxes[style].values())
 win_descent = max(abs(bbox[1]) for style, _ in metric_files for bbox in bboxes[style].values())
+
 
 for style, _ in metric_files:
     with open(f"build/xcharter-{style}.feat", "w") as f:
