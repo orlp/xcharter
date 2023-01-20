@@ -1,6 +1,6 @@
 # XCharter
 
-High quality Charter TTF, OTF and WOFF2 builds.
+High quality XCharter TTF, OTF and WOFF2 builds.
 
 See releases or build with `build.sh` (see below for requirements - it's a bunch).
 
